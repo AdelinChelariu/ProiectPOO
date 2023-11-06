@@ -96,4 +96,11 @@ public class Produs {
         this.pret = p.pret;
         this.disponibilitate = p.disponibilitate;
     }
+
+    @Override
+    public String toString() {
+        return "Denumire=" + denumire + "\nDescriere completa: " + descriereFull + 
+                "\nDescriere scurta: " + descriereShort + "\nMarca: " + marca + 
+                "\nPret: " + pret + (disponibilitate?"Disponibil":"Indisponibil");
+    }
 }
