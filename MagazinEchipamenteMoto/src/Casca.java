@@ -48,4 +48,13 @@ public class Casca extends Produs {
         this.tip = null;
         this.culoare = null;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + 
+                "\nDimensiune: " + dimensiune + 
+                "\nTip: " + tip + 
+                "\nCuloare: " + culoare;
+    }
+    
 }
