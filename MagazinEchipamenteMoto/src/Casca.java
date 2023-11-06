@@ -6,18 +6,23 @@ public class Casca extends Produs {
     public char[] getDimensiune() {
         return dimensiune;
     }
+
     public void setDimensiune(char[] dimensiune) {
         this.dimensiune = dimensiune;
     }
+
     public String getTip() {
         return tip;
     }
+
     public void setTip(String tip) {
         this.tip = tip;
     }
+
     public String getCuloare() {
         return culoare;
     }
+
     public void setCuloare(String culoare) {
         this.culoare = culoare;
     }
