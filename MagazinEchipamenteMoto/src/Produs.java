@@ -6,7 +6,7 @@ public class Produs {
     private String descriereShort;      // O descriere scurta a produsului, pentru pagina principala
     private String marca;               // Marca produsului
     private String imagine;             // Calea catre o imagine cu produsul
-    private float pret;                 // Pretul produsului
+    private double pret;                // Pretul produsului
     private boolean disponibilitate;    // Se afla sau nu in stoc 
 
     // Setteri si  getteri pentru datele membre
@@ -50,11 +50,11 @@ public class Produs {
         this.imagine = imagine;
     }
 
-    public float getPret() {
+    public double getPret() {
         return pret;
     }
 
-    public void setPret(float pret) {
+    public void setPret(double pret) {
         this.pret = pret;
     }
 
@@ -68,16 +68,16 @@ public class Produs {
 
     // Constructori pentru obiecte de tip produs
     public Produs() {
-        this.denumire = null;
-        this.descriereFull = null;
-        this.descriereShort = null;
-        this.marca = null;
-        this.imagine = null;
+        this.denumire = "N/A";
+        this.descriereFull = "N/A";
+        this.descriereShort = "N/A";
+        this.marca = "N/A";
+        this.imagine = "N/A";
         this.pret = 0;
         this.disponibilitate = false;
     }
 
-    public Produs(String denumire, String descriereFull, String descriereShort, String marca, String imagine, float pret, boolean disponibilitate) {
+    public Produs(String denumire, String descriereFull, String descriereShort, String marca, String imagine, double pret, boolean disponibilitate) {
         this.denumire = denumire;
         this.descriereFull = descriereFull;
         this.descriereShort = descriereShort;
@@ -99,8 +99,13 @@ public class Produs {
 
     @Override
     public String toString() {
-        return "Denumire: " + denumire + "\nDescriere completa: " + descriereFull + 
-                "\nDescriere scurta: " + descriereShort + "\nMarca: " + marca + 
-                "\nPret: " + pret + (disponibilitate?"Disponibil":"Indisponibil");
+        return "Denumire: " + denumire + "\nDescriere completa: \n\t" + descriereFull + 
+                "\n\nDescriere scurta: \n\t" + descriereShort + "\n\nMarca: " + marca + 
+                "\nPret: " + pret + " RON \n" + (disponibilitate?"Disponibil":"Indisponibil");
+    }
+    public String toString(int i) {
+        return "Denumire: " + denumire + 
+                "\nMarca: " + marca + 
+                "\nPret: " + pret + " RON \n" + (disponibilitate?"Disponibil":"Indisponibil");
     }
 }
