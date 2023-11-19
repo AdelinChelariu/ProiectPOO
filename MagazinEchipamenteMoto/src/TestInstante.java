@@ -1,7 +1,7 @@
 public class TestInstante {
 
     public static void main(String[] args) {
-        Casca c1, c2, c3;
+        Casca c1, c2, c3 ,c4, c5;
         c1 = new Casca();
         c2 = new Casca("HJC RPHA 11 Punisher Marvel",
                 """
@@ -26,7 +26,7 @@ public class TestInstante {
                 HJC ridica miza jocului cu aceasta casca la care s-au folosit numai materiale si gadget-uri premium. 10 canale de
                 ventilatie si camp vizual foarte larg, design unic!""",
                 "HJC",
-                null,
+                "N/A",
                 1899,
                 true,
                 "Integrala",
@@ -34,9 +34,48 @@ public class TestInstante {
         c3 = new Casca(c2);
         c3.setDisponibilitate(false);
         c3.setImagine("N/A");
+        c4 = new Casca("Casca Scorpion Exo 520 Evo Air Cover",
+                        """
+                        Noua casca moto Scorpion Exo 520 Evo Air Cover este alegerea optima pentru toti pasionatii de sport/touring, 
+                            garantand un confort crescut, multiple dotari tehnice si siguranta superioara. Exo 520 depaseste asteptarile 
+                            categoriei din care face parte integrand dotari premium ce se regasesc la modelele de top, Exo 1400/R1 insa la un pret mult mai accesibil. 
+                            Printre acestea se numara, mecanismul de inchidere a vizierei, viziera, ghederul de etansare si un sistem airfit mult mai performant.
+                        - Carcasa este fabricata in 3 dimensiuni exterioare XS-M, L si XL-XXL iar marimea castii poate fi aleasa de la XS si pana la XXL;
+                        - Interior detasabil usor de inlaturat, lavabil si respirabil, tratat antibacterian, marca KWIKWICK 2 ™ ;
+                        - Conceptul AIRFIT complet nou si mult mai eficient, brevetat de Scorpion, permite utilizatorul sa-si personalizeze 
+                            masura castii prin inflarea obrajilor laterali, astfel, creandu-se o potrivire perfecta si o etansare superioara 
+                            chiar si dupa o utilizare indelungata care in mod normal largeste interiorul oricarei casti;
+                        - Pinlock 100% Maxivision, In premiera mondiala, sistemul performant antiaburire oferit in dotarea standard. 
+                            Se potriveste perfecta in spatiul special destinat din interiorul vizierei si asigura o etansare eficienta;
+                        - Casca este prevazuta cu sistemul ELLIP-TEC, mecanism al vizierei testat in numeroase curse de talie mondiala, 
+                            pe castile varf de gama EXO 1400/ R1. Sistemul testat in tunelul de vant, asigura o inchidere etansa peste 
+                            ghederul castii datorita arcurilor ranforsate si a fortei de compresie si mentinte viziera la loculul ei 
+                            chair si in cazul unui accident. Sistemul permite inlocuirea vizierea fara nicio unealta in mai putin de 10 secunde;
+                        - Ochelari de soare retractabili, integrati in interiorul castii;
+                        - Ventilatii performante la nivelul barbiei si al fruntii ce conduc aerul catre extractorul pozitionat spre ceafa;
+                        - Deflector de aer ce previne aburirea vizierei si confera castii o imagine agresiva;
+                        - Protectie la barbie ce contribuie la diminuarea nivelului de zgomot;
+                        - Sistem de inchidere micrometric pentru o ajustare precisa si o deschidere rapida;
+                        - Noua certificare ECE 22-06 ce asigura un nivel ridicat de protectie.;
+                        - Casca se vinde cu viziera clara;
+                        - Pregatita pentru sistemul de comunicare EXO-COM""",
+                        """
+                        Noua casca moto Scorpion Exo 520 Evo Air Cover este alegerea optima pentru toti pasionatii de sport/touring, 
+                            garantand un confort crescut, multiple dotari tehnice si siguranta superioara.""", 
+                        "Scorpion Exo",
+                        "N/A",
+                        1170,
+                        true,
+                        "Integrala",
+                        "Argintiu mat");
+        c5 = new Casca(c4);
+        c5.setCuloare("Negru mat");
+        c5.setDisponibilitate(false);
         System.out.println("Casca 1: \n" + c1);
         System.out.println("Casca 2: \n" + c2);
         System.out.println("Casca 3: \n" + c3);
+        System.out.println("Casca 4: \n" + c4);
+        System.out.println("Casca 5: \n" + c5);
 
         Jacheta j1, j2, j3;
         j1 = new Jacheta();
@@ -52,7 +91,7 @@ public class TestInstante {
                 Rebelhorn Vandal este o geaca moto din piele ideala pentru mersul in oras, in afara lui sau la trackday-uri.
                 \u00cempreun\u0103 cu blugii moto Rebelhorn Vandal ai o solutie de design ce imbina confortul cu siguranta pentru iesirile cu motocicleta.""",
                 "Rebelhorn",
-                null,
+                "N/A",
                 1599,
                 true,
                 "Piele",
@@ -70,18 +109,21 @@ public class TestInstante {
         casti[0] = c1;
         casti[1] = c2; 
         casti[2] = c3;
+        casti[3] = c4;
+        casti[4] = c5;
         jachete[0] = j1;
         jachete[1] = j2;
         jachete[2] = j3;
         
-        jachete[3] = new Jacheta(j2);
+        jachete[3] = new Jacheta(j3);
         jachete[3].setCuloare("Fluo");
+        jachete[3].setPret(1700);
         jachete[3].setDisponibilitate(false);
         
         
         
         System.out.println("Afisare vector casti\n");
-        for(int i = 0; i < casti.length - 7; i++)
+        for(int i = 0; i < casti.length - 5; i++)
         {
             System.out.println(casti[i].toString(1) + "\n");
         }
