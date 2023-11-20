@@ -60,7 +60,7 @@ public class Manusi extends Produs {
 @Override
     public String toString(){
         return super.toString()
-                +"\nculoare " + culoare
+                +"\nculoaRe " + culoare
                 +"\nmaterial " + material
                 +"\ntip " + tip + "\n";
     } 

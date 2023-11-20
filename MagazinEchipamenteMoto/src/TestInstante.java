@@ -497,7 +497,7 @@ public class TestInstante {
         {
             System.out.println(man[i].toString(1) + "\n");
         }
-        System.out.println("\nVector Incaltaminte\n");
+        System.out.println("\nVector INcaltaminte\n");
         for(int i = 0; i < inc.length; i++)
         {
             System.out.println(inc[i].toString(1) + "\n");
