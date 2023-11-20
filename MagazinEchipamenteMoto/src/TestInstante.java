@@ -147,5 +147,14 @@ public class TestInstante {
                 System.out.println(jachete[i].toString(1) + "\n");
             }
         }*/
+        
+        
+        //instante de tip intercom
+        Intercom t1,t2;
+        
+        t1 = new Intercom();
+        t2 = new Intercom();
+        
+        
     }
 }
