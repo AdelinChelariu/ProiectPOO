@@ -1,12 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author beligga
- */
 public class Intercom extends Produs {
     private double autonomie;  //numar de ore pana la incarcare
     private float distanta;  //distanta maxima intre doua dispozitive
@@ -90,6 +81,14 @@ public class Intercom extends Produs {
     @Override
     public String toString() {
         return super.toString() + 
+                "\nAutonomie: " + autonomie + 
+                "\nDistanta: " + distanta + 
+                "\nBluetooth: " + bluetooth+
+                "\nMicrofon: " + microfon+
+                "\nNumarDispozitiveConectate: "+numarDispozitiveConectate;
+    }
+    public String toString(int i) {
+        return super.toString(i) + 
                 "\nAutonomie: " + autonomie + 
                 "\nDistanta: " + distanta + 
                 "\nBluetooth: " + bluetooth+
