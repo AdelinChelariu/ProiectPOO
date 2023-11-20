@@ -81,7 +81,7 @@ public class Incaltaminte extends Produs {
     }
      public String toString(int i){
         return super.toString(i)
-                +"\nculoare " + culoare
+                +"\nculoARe " + culoare
                 +"\nmaterial " + material
                 +"\ntip " + tip
                 +"\nmarime " + marime + "\n";
