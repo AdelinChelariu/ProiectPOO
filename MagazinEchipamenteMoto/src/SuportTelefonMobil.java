@@ -34,7 +34,7 @@ public class SuportTelefonMobil extends Produs {
         this.diagonalaTelefon = 0;
     }
 
-    public SuportTelefonMobil(String prindere, String material, double diagonalaTelefon, String denumire, String descriereFull, String descriereShort, String marca, String imagine, float pret, boolean disponibilitate) {
+    public SuportTelefonMobil(String denumire, String descriereFull, String descriereShort, String marca, String imagine, float pret, boolean disponibilitate,String prindere, String material, double diagonalaTelefon) {
         super(denumire, descriereFull, descriereShort, marca, imagine, pret, disponibilitate);
         this.prindere = prindere;
         this.material = material;
@@ -57,6 +57,12 @@ public class SuportTelefonMobil extends Produs {
      @Override
     public String toString() {
         return super.toString() + 
+                "\nPrindere: " + prindere + 
+                "\nMaterial: " + material + 
+                "\nDiagonala Telefonului : " + diagonalaTelefon;
+    }
+    public String toString(int i) {
+        return super.toString(i) + 
                 "\nPrindere: " + prindere + 
                 "\nMaterial: " + material + 
                 "\nDiagonala Telefonului : " + diagonalaTelefon;
