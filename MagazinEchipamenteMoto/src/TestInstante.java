@@ -153,10 +153,9 @@ public class TestInstante {
                 "Integrala",
                 "Negru carbon");
 
-        System.out.println("Casca 1: \n" + c1);
-        System.out.println("Casca 2: \n" + c2);
-        System.out.println("Casca 3: \n" + c3);
-
+//        System.out.println("Casca 1: \n" + c1);
+//        System.out.println("Casca 2: \n" + c2);
+//        System.out.println("Casca 3: \n" + c3);
         Jacheta j1, j2, j3, j4, j5, j6, j7, j8, j9, j10;
         j1 = new Jacheta();
 
@@ -292,10 +291,9 @@ public class TestInstante {
                 "Piele",
                 "Rosu");
 
-        System.out.println("Jacheta 1: \n" + j1);
-        System.out.println("Jacheta 2: \n" + j2);
-        System.out.println("Jacheta 3: \n" + j3);
-
+//        System.out.println("Jacheta 1: \n" + j1);
+//        System.out.println("Jacheta 2: \n" + j2);
+//        System.out.println("Jacheta 3: \n" + j3);
         Casca[] casti = new Casca[10];
         Jacheta[] jachete = new Jacheta[10];
 
@@ -321,20 +319,6 @@ public class TestInstante {
         jachete[8] = j9;
         jachete[9] = j10;
 
-        /*System.out.println("Afisare casti din vector cu conditie\n");
-        for(int i = 0; i < casti.length - 7; i++)
-        {
-            if(casti[i].getDisponibilitate() == true) {
-                System.out.println(casti[i].toString(1) + "\n");
-            }
-        }
-        System.out.println("\nAfisare jachete din vector cu conditie\n");
-        for(int i = 0; i < jachete.length - 6; i++)
-        {
-            if(jachete[i].getDisponibilitate() == true) {
-                System.out.println(jachete[i].toString(1) + "\n");
-            }
-        }*/
         //instante de tip intercom
         Intercom t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
 
@@ -421,10 +405,9 @@ public class TestInstante {
         t10.setDisponibilitate(false);
         t10.setDistanta(550.550f);
 
-        System.out.println("Intercom 1" + t1);
-        System.out.println("Intercom 5" + t5);
-        System.out.println("Intercom 10" + t10);
-
+//        System.out.println("Intercom 1" + t1);
+//        System.out.println("Intercom 5" + t5);
+//        System.out.println("Intercom 10" + t10);
         //creare vector de 10 instante
         Intercom[] sisteme = new Intercom[10];
         sisteme[0] = t1;
@@ -517,10 +500,9 @@ public class TestInstante {
         s10.setPrindere("ghidon");
         s10.setPret(148.14);
 
-        System.out.println("Suport 7" + s7);
-        System.out.println("Suport 3" + s3);
-        System.out.println("Suport 6" + s6);
-
+//        System.out.println("Suport 7" + s7);
+//        System.out.println("Suport 3" + s3);
+//        System.out.println("Suport 6" + s6);
         //vector Suport Telefoane
         SuportTelefonMobil[] suport = new SuportTelefonMobil[10];
         suport[0] = s10;
@@ -838,16 +820,15 @@ public class TestInstante {
                 "Urban",
                 43);
 
-        System.out.println("Manusi1: \n" + m1);
-        System.out.println("Manusi2: \n" + m2);
-        System.out.println("Manusi3: \n" + m3);
-
-        System.out.println("Incaltaminte1: \n" + i1);
-        System.out.println("Incaltaminte2: \n" + i2);
-        System.out.println("Incaltaminte3: \n" + i3);
-        System.out.println("Incaltaminte4: \n" + i4);
-        System.out.println("Incaltaminte5: \n" + i5);
-
+//        System.out.println("Manusi1: \n" + m1);
+//        System.out.println("Manusi2: \n" + m2);
+//        System.out.println("Manusi3: \n" + m3);
+//
+//        System.out.println("Incaltaminte1: \n" + i1);
+//        System.out.println("Incaltaminte2: \n" + i2);
+//        System.out.println("Incaltaminte3: \n" + i3);
+//        System.out.println("Incaltaminte4: \n" + i4);
+//        System.out.println("Incaltaminte5: \n" + i5);
         Manusi[] man = new Manusi[10];
         Incaltaminte[] inc = new Incaltaminte[10];
         man[0] = m1;
@@ -897,6 +878,79 @@ public class TestInstante {
         System.out.println("Vector incaltaminte\n");
         for (int i = 0; i < inc.length; i++) {
             System.out.println(inc[i].toString(1) + "\n");
+        }
+
+        System.out.println("Printare din vectori cu conditii. \n");
+        
+        System.out.println("\nAfisari vector cu conditie clasa SuportTelefonMobil\n\n");
+        boolean boolSuport = false;
+        for (SuportTelefonMobil i : suport) {
+            if (i.getPret() < 2000 && i.getMaterial().equals("plastic")) {
+                System.out.println(i.toString(2) + "\n");
+                boolSuport = true;
+            }
+        }
+        if (!boolSuport) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+        System.out.println("\nAfisari vector cu conditie clasa Intercom\n\n");
+        boolean boolIntercom = false;
+        for (Intercom i : sisteme) {
+            if (i.getPret() < 2000 && i.isBluetooth() != true) {
+                System.out.println(i.toString(2) + "\n");
+                boolIntercom = true;
+            }
+        }
+        if (!boolIntercom) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+
+        System.out.println("Afisare casti din vector cu conditie\n");
+        boolean hFlag = false;
+        for (int i = 0; i < casti.length; i++) {
+            if (casti[i].getMarca().equalsIgnoreCase("hjc") && casti[i].getCuloare().toLowerCase().indexOf("mat") > -1) {
+                System.out.println(casti[i].toString(1) + "\n");
+                hFlag = true;
+            }
+        }
+        if (!hFlag) {
+            System.out.println("Nu s-a gasit niciun produs cu aceste specificatii");
+        }
+
+        System.out.println("\nAfisare jachete din vector cu conditie\n");
+        boolean jFlag = false;
+        for (int i = 0; i < jachete.length; i++) {
+            if (jachete[i].getPret() >= 1600 && jachete[i].getMaterial().equalsIgnoreCase("piele")) {
+                System.out.println(jachete[i].toString(1) + "\n");
+                jFlag = true;
+            }
+        }
+        if (!jFlag) {
+            System.out.println("Nu s-a gasit niciun produs cu aceste specificatii");
+        }
+
+        System.out.println("\nAfisari vector cu conditie clasa Manusi\n\n");
+        boolean boolman = false;
+        for (Manusi i : man) {
+            if (i.getPret() < 300 && i.getCuloare().equals("Negru")) {
+                System.out.println(i.toString(1) + "\n");
+                boolman = true;
+            }
+        }
+        if (!boolman) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+
+        System.out.println("\nAfisari vector cu conditie clasa Incaltaminte\n\n");
+        boolean boolinc = false;
+        for (Incaltaminte i : inc) {
+            if (i.getMarime() == 44 && i.getTip().equals("Adventure")) {
+                System.out.println(i.toString(1) + "\n");
+                boolinc = true;
+            }
+        }
+        if (!boolinc) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
         }
     }
 }

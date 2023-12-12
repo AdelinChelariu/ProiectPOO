@@ -40,9 +40,9 @@ public class Incaltaminte extends Produs {
     
     public Incaltaminte(){
         super();
-        this.culoare = null;
-        this.material = null;
-        this.tip = null;
+        this.culoare = "";
+        this.material = "";
+        this.tip = "";
         this.marime = 0;
     }
     
