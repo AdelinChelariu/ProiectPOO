@@ -29,8 +29,8 @@ public class SuportTelefonMobil extends Produs {
 
     public SuportTelefonMobil() {
         super();
-        this.prindere = null;
-        this.material = null;
+        this.prindere = "";
+        this.material = "";
         this.diagonalaTelefon = 0;
     }
 

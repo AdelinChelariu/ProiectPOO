@@ -502,6 +502,55 @@ public class TestInstante {
         {
             System.out.println(inc[i].toString(1) + "\n");
         }
+        
+       /* System.out.println("---------------------------------");
+        boolean boolSuport = false;
+     for(SuportTelefonMobil i : suport){
+            if(i.getPret()<2000 && i.getMaterial().equals("plastic")){
+                 System.out.println(i.toString(2)+"\n");
+                 boolSuport = true;
+            }
+         }
+        if (!boolSuport) {
+    System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+}
+        System.out.println("\nAfisari vector cu conditie clasa Intercom\n\n");
+        boolean boolIntercom = false;
+        for(Intercom i : sisteme){
+            if(i.getPret()<2000 && i.isBluetooth()!=true){
+                 System.out.println(i.toString(2)+"\n");
+                 boolIntercom = true;
+            }
+         }
+        if (!boolIntercom) {
+    System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }*/
+        
+        
+        System.out.println("\nAfisari vector cu conditie clasa Manusi\n\n");
+        boolean boolman = false;
+        for(Manusi i : man) {
+            if(i.getPret()<300 && i.getCuloare().equals("Negru")){
+                System.out.println(i.toString(1)+"\n");
+                boolman = true;
+            }
+            }
+        if (!boolman) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+        
+        System.out.println("\nAfisari vector cu conditie clasa Incaltaminte\n\n");
+        boolean boolinc = false;
+        for(Incaltaminte i : inc) {
+            if(i.getMarime()==44 && i.getTip().equals("Adventure")){
+                System.out.println(i.toString(1)+"\n");
+                boolinc = true;
+            }
+            }
+        if (!boolman) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+        
                 
  
     }
