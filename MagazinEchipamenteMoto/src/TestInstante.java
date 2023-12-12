@@ -853,7 +853,7 @@ public class TestInstante {
         inc[8] = i9;
         inc[9] = i10;
 
-        System.out.println("Afisare vector casti\n");
+        /*System.out.println("Afisare vector casti\n");
         for (int i = 0; i < 10; i++) {
             System.out.println("Casca " + (i + 1) + " \n" + casti[i].toString(1) + "\n");
         }
@@ -878,7 +878,7 @@ public class TestInstante {
         System.out.println("Vector incaltaminte\n");
         for (int i = 0; i < inc.length; i++) {
             System.out.println(inc[i].toString(1) + "\n");
-        }
+        }*/
 
         System.out.println("Printare din vectori cu conditii. \n");
         
