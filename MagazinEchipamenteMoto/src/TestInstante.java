@@ -921,5 +921,30 @@ public class TestInstante {
         if (!boolIntercom) {
     System.out.println("Niciun produs nu este eligibil conform conditiilor.");
         }
+        
+        System.out.println("\nAfisari vector cu conditie clasa Manusi\n\n");
+        boolean boolman = false;
+        for(Manusi i : man) {
+            if(i.getPret()<300 && i.getCuloare().equals("Negru")){
+                System.out.println(i.toString(1)+"\n");
+                boolman = true;
+            }
+            }
+        if (!boolman) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+        
+        System.out.println("\nAfisari vector cu conditie clasa Incaltaminte\n\n");
+        boolean boolinc = false;
+        for(Incaltaminte i : inc) {
+            if(i.getMarime()==44 && i.getTip().equals("Adventure")){
+                System.out.println(i.toString(1)+"\n");
+                boolinc = true;
+            }
+            }
+        if (!boolman) {
+            System.out.println("Niciun produs nu este eligibil conform conditiilor.");
+        }
+        
     }
 }

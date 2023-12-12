@@ -28,9 +28,9 @@ public class Manusi extends Produs {
     
     public Manusi(){
         super();
-        this.culoare = null;
-        this.material = null;
-        this.tip = null;
+        this.culoare = "";
+        this.material = "";
+        this.tip = "";
                 
     }
     
