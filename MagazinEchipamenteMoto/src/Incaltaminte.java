@@ -46,7 +46,7 @@ public class Incaltaminte extends Produs {
         this.marime = 0;
     }
     
-    public Incaltaminte(String denumire,String descriereFull,String descriereShort, String marca,String imagine,float pret,boolean disponibilitate,String culoare,String material,String tip,int marime){
+    public Incaltaminte(String denumire,String descriereFull,String descriereShort, String marca,String imagine,double pret,boolean disponibilitate,String culoare,String material,String tip,int marime){
         super(denumire,descriereFull,descriereShort,marca,imagine,pret,disponibilitate);
         
         this.culoare = culoare;

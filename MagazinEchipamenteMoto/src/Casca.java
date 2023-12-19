@@ -1,4 +1,6 @@
-public class Casca extends Produs {
+import java.io.*;
+
+public class Casca extends Produs implements Serializable {
     private String tip;         // Integrala, Flip-Up, etc...
     private String culoare;     // Culoarea / Design-ul castii
 

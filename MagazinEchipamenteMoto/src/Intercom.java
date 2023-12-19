@@ -40,7 +40,7 @@ public class Intercom extends Produs {
         
     }
 
-    public Intercom(String denumire, String descriereFull, String descriereShort, String marca, String imagine, float pret, boolean disponibilitate,double autonomie, float distanta, boolean bluetooth) {
+    public Intercom(String denumire, String descriereFull, String descriereShort, String marca, String imagine, double pret, boolean disponibilitate,double autonomie, float distanta, boolean bluetooth) {
         super(denumire, descriereFull, descriereShort, marca, imagine, pret, disponibilitate);
         this.autonomie = autonomie;
         this.distanta = distanta;

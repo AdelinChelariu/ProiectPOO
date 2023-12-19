@@ -34,7 +34,7 @@ public class SuportTelefonMobil extends Produs {
         this.diagonalaTelefon = 0;
     }
 
-    public SuportTelefonMobil(String denumire, String descriereFull, String descriereShort, String marca, String imagine, float pret, boolean disponibilitate,String prindere, String material, double diagonalaTelefon) {
+    public SuportTelefonMobil(String denumire, String descriereFull, String descriereShort, String marca, String imagine, double pret, boolean disponibilitate,String prindere, String material, double diagonalaTelefon) {
         super(denumire, descriereFull, descriereShort, marca, imagine, pret, disponibilitate);
         this.prindere = prindere;
         this.material = material;

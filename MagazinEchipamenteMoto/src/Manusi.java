@@ -34,7 +34,7 @@ public class Manusi extends Produs {
                 
     }
     
-    public Manusi(String denumire,String descriereFull,String descriereShort, String marca,String imagine,float pret,boolean disponibilitate,String culoare, String material, String tip){
+    public Manusi(String denumire,String descriereFull,String descriereShort, String marca,String imagine,double pret,boolean disponibilitate,String culoare, String material, String tip){
         super(denumire,descriereFull,descriereShort,marca,imagine,pret,disponibilitate);
         
         this.culoare = culoare;

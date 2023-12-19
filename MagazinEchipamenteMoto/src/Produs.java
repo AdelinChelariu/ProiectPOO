@@ -1,5 +1,6 @@
+import java.io.*;
 
-public class Produs {
+public class Produs implements Serializable {
 
     private String denumire;            // Numele produsului
     private String descriereFull;       // O descriere completa a produsului

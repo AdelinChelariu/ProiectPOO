@@ -1,4 +1,6 @@
-public class Jacheta extends Produs {
+import java.io.*;
+
+public class Jacheta extends Produs implements Serializable {
 
     private String material;        // Piele/Textil
     private String culoare;
