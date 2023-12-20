@@ -7,27 +7,27 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class BootsWindow extends javax.swing.JFrame {
 
-    ArrayList<Incaltaminte> ghete;
-    public BootsWindow() {
+public class MountWindow extends javax.swing.JFrame {
+
+    ArrayList<SuportTelefonMobil> suport;
+    public MountWindow() {
         initComponents();
-        ghete = new ArrayList<Incaltaminte>();
+        suport =   new ArrayList<SuportTelefonMobil>();
         populateArrayList();
         DecimalFormat formatter = new DecimalFormat("##,###.00");
-        String[] jacketArray = new String[ghete.size()];
-        for(int i=0; i< ghete.size();  i++){
-            jacketArray[i] = ghete.get(i).getDenumire() + " - " + formatter.format(ghete.get(i).getPret()) + " lei";
+        String[] mountArray = new String[suport.size()];
+        for(int i=0; i< suport.size();  i++){
+            mountArray[i] = suport.get(i).getDenumire() + " - " + formatter.format(suport.get(i).getPret()) + " lei";
         }
-        bootsList.setModel(new javax.swing.AbstractListModel<String>() {
-            public int getSize() { return jacketArray.length; }
-            public String getElementAt(int i) { return jacketArray[i]; }
+        mountList.setModel(new javax.swing.AbstractListModel<String>() {
+            public int getSize() { return mountArray.length; }
+            public String getElementAt(int i) { return mountArray[i]; }
         });
     }
-
     public void populateArrayList(){
         try{
-            FileInputStream fileStream = new  FileInputStream("ghete.dat");
+            FileInputStream fileStream = new  FileInputStream("suport.dat");
             ObjectInputStream objectStream = new ObjectInputStream(fileStream);
             
             boolean endOfFile = false;
@@ -35,7 +35,7 @@ public class BootsWindow extends javax.swing.JFrame {
             while(!endOfFile)
             {
                 try{
-                    ghete.add((Incaltaminte) objectStream.readObject());
+                    suport.add((SuportTelefonMobil) objectStream.readObject());
                 } catch(EOFException e){
                     endOfFile = true;
                 } catch(Exception f){
@@ -47,12 +47,14 @@ public class BootsWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,e.getMessage());
         }
     }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        bootsList = new javax.swing.JList<>();
+        mountList = new javax.swing.JList<>();
         addButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         btnInchidere = new javax.swing.JButton();
@@ -62,12 +64,12 @@ public class BootsWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bootsList.setModel(new javax.swing.AbstractListModel<String>() {
+        mountList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(bootsList);
+        jScrollPane1.setViewportView(mountList);
 
         addButton.setText("Adauga");
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +94,7 @@ public class BootsWindow extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ghete Moto");
+        jLabel1.setText("Suport Telefon Mobil");
 
         jacketPanel.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jacketPanel.setOpaque(false);
@@ -122,18 +124,20 @@ public class BootsWindow extends javax.swing.JFrame {
                         .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 303, Short.MAX_VALUE))
+                            .addComponent(jacketPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInchidere))
-                    .addComponent(jacketPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnInchidere)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(331, 331, 331)
-                .addComponent(jLabel1)
-                .addContainerGap(359, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addButton, deleteButton});
@@ -160,7 +164,7 @@ public class BootsWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        new AddBoots().setVisible(true);
+        new AddMount().setVisible(true);
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
@@ -188,32 +192,32 @@ public class BootsWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MountWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MountWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MountWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MountWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BootsWindow().setVisible(true);
+                new MountWindow().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
-    private javax.swing.JList<String> bootsList;
     private javax.swing.JButton btnInchidere;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jacketPanel;
+    private javax.swing.JList<String> mountList;
     // End of variables declaration//GEN-END:variables
 }

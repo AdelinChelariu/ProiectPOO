@@ -7,27 +7,26 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class BootsWindow extends javax.swing.JFrame {
+public class IntercomWindow extends javax.swing.JFrame {
 
-    ArrayList<Incaltaminte> ghete;
-    public BootsWindow() {
+    ArrayList<Intercom>  intercom;
+    public IntercomWindow() {
         initComponents();
-        ghete = new ArrayList<Incaltaminte>();
+        intercom = new ArrayList<Intercom>();
         populateArrayList();
         DecimalFormat formatter = new DecimalFormat("##,###.00");
-        String[] jacketArray = new String[ghete.size()];
-        for(int i=0; i< ghete.size();  i++){
-            jacketArray[i] = ghete.get(i).getDenumire() + " - " + formatter.format(ghete.get(i).getPret()) + " lei";
+        String[] intercomArray = new String[intercom.size()];
+        for(int i=0; i< intercom.size();  i++){
+            intercomArray[i] = intercom.get(i).getDenumire() + " - " + formatter.format(intercom.get(i).getPret()) + " lei";
         }
-        bootsList.setModel(new javax.swing.AbstractListModel<String>() {
-            public int getSize() { return jacketArray.length; }
-            public String getElementAt(int i) { return jacketArray[i]; }
+        intercomList.setModel(new javax.swing.AbstractListModel<String>() {
+            public int getSize() { return intercomArray.length; }
+            public String getElementAt(int i) { return intercomArray[i]; }
         });
     }
-
     public void populateArrayList(){
         try{
-            FileInputStream fileStream = new  FileInputStream("ghete.dat");
+            FileInputStream fileStream = new  FileInputStream("intercom.dat");
             ObjectInputStream objectStream = new ObjectInputStream(fileStream);
             
             boolean endOfFile = false;
@@ -35,7 +34,7 @@ public class BootsWindow extends javax.swing.JFrame {
             while(!endOfFile)
             {
                 try{
-                    ghete.add((Incaltaminte) objectStream.readObject());
+                    intercom.add((Intercom) objectStream.readObject());
                 } catch(EOFException e){
                     endOfFile = true;
                 } catch(Exception f){
@@ -52,7 +51,7 @@ public class BootsWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        bootsList = new javax.swing.JList<>();
+        intercomList = new javax.swing.JList<>();
         addButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         btnInchidere = new javax.swing.JButton();
@@ -62,12 +61,12 @@ public class BootsWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bootsList.setModel(new javax.swing.AbstractListModel<String>() {
+        intercomList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(bootsList);
+        jScrollPane1.setViewportView(intercomList);
 
         addButton.setText("Adauga");
         addButton.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +91,7 @@ public class BootsWindow extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ghete Moto");
+        jLabel1.setText("Intercom");
 
         jacketPanel.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jacketPanel.setOpaque(false);
@@ -116,11 +115,11 @@ public class BootsWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +132,7 @@ public class BootsWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(331, 331, 331)
                 .addComponent(jLabel1)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addContainerGap(381, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addButton, deleteButton});
@@ -160,7 +159,7 @@ public class BootsWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        new AddBoots().setVisible(true);
+        new AddIntercom().setVisible(true);
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
@@ -188,29 +187,29 @@ public class BootsWindow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IntercomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IntercomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IntercomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BootsWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IntercomWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BootsWindow().setVisible(true);
+                new IntercomWindow().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
-    private javax.swing.JList<String> bootsList;
     private javax.swing.JButton btnInchidere;
     private javax.swing.JButton deleteButton;
+    private javax.swing.JList<String> intercomList;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -7,6 +7,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         listaMenu = new javax.swing.JMenu();
         fileMenuIesire = new javax.swing.JMenuItem();
@@ -27,6 +28,9 @@ public class Menu extends javax.swing.JFrame {
         setTitle("MagazinEchipamenteMoto");
         setMinimumSize(new java.awt.Dimension(400, 300));
         setPreferredSize(new java.awt.Dimension(800, 500));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menuBackground.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
         listaMenu.setText("File");
 
@@ -118,11 +122,17 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 792, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 788, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -149,11 +159,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_incaltaminteMenuListActionPerformed
 
     private void intercomMenuListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intercomMenuListActionPerformed
-        // TODO add your handling code here:
+        new IntercomWindow().setVisible(true);
     }//GEN-LAST:event_intercomMenuListActionPerformed
 
     private void suportMenuListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suportMenuListActionPerformed
-        // TODO add your handling code here:
+        new MountWindow().setVisible(true);
     }//GEN-LAST:event_suportMenuListActionPerformed
 
     /**
@@ -199,6 +209,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem incaltaminteMenuList;
     private javax.swing.JMenu intercomMenu;
     private javax.swing.JMenuItem intercomMenuList;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jacheteMenu;
     private javax.swing.JMenuItem jacheteMenuLista;

@@ -2,7 +2,6 @@ public class Intercom extends Produs {
     private double autonomie;  //numar de ore pana la incarcare
     private float distanta;  //distanta maxima intre doua dispozitive
     private boolean bluetooth;  //conectivitate la telefon mobil
-    
 
     public void setAutonomie(double autonomie) {
         this.autonomie = autonomie;
@@ -16,8 +15,6 @@ public class Intercom extends Produs {
         this.bluetooth = bluetooth;
     }
 
-    
-
     public double getAutonomie() {
         return autonomie;
     }
@@ -29,8 +26,6 @@ public class Intercom extends Produs {
     public boolean isBluetooth() {
         return bluetooth;
     }
-
-   
 
     public Intercom() {
         super();
